@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gerçek Dünya Savaş Oyunu (GPS)</title>
+  <style>
+    body { font-family: -apple-system, Arial; margin: 16px; }
+    .box { padding: 12px; border: 1px solid #ddd; border-radius: 12px; margin-bottom: 12px; }
+    button { padding: 12px 14px; border: 0; border-radius: 12px; background: #111; color: #fff; font-weight: 600; }
+    .small { opacity: 0.75; font-size: 13px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .tile { height: 84px; display:flex; align-items:center; justify-content:center; border-radius: 14px; font-weight: 700; }
+    .mine { background: #d1fae5; border: 1px solid #10b981; }
+    .enemy { background: #fee2e2; border: 1px solid #ef4444; }
+    .neutral { background: #f3f4f6; border: 1px solid #9ca3af; }
+  </style>
+</head>
+<body>
+  <h2>🪖 Gerçek Dünya Savaş Oyunu</h2>
+  <div class="box">
+    <p><b>Hedef:</b> Yakınındaki bölgeyi ele geçir, puan topla.</p>
+    <p class="small">GPS gerekir. iPhone’da Safari → konum iznini “Allow” yap.</p>
+    <button id="startBtn">📍 Konumu Başlat</button>
+  </div>
+
+  <div class="box">
+    <div><b>Senin Konum:</b> <span id="pos">—</span></div>
+    <div><b>Bulunduğun Hücre:</b> <span id="cell">—</span></div>
+    <div><b>Skor:</b> <span id="score">0</span> | <b>Ele geçirilen:</b> <span id="owned">0</span></div>
+    <br/>
+    <button id="claimBtn" disabled>🏴 Bölgeyi Ele Geçir</button>
+  </div>
+
+  <div class="box">
+    <b>Harita (yakın çevre)</b>
+    <div class="small">Senin bulunduğun hücre = ortadaki kutu gibi düşün 😄</div>
+    <br/>
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
